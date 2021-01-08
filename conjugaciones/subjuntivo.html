@@ -53,11 +53,14 @@ title: Juego de las conjugaciones
 
 <button id="boton_otra" type="button" onclick="otra()">Otra vez</button>
 
-<p>Gracias por jugar</p>
+<p>Gracias por jugar. Ver. 0.9</p>
 
 <script>
 	p="";
 	aciertos=0;
+	var checked = JSON.parse(localStorage.getItem("compuestas")); 
+        document.getElementById("compuestas").checked = checked; // Recuperamos estado del checkbox para tiempos compuestos
+	
 	function genera_solucion() {
 	 var verbos1= ["cantar","bailar","saltar","mirar","pasar","nadar"];
     var pres1= ["e","es","e","emos","éis","en"];
@@ -290,8 +293,7 @@ function otra()
 	document.getElementById("usuario5").value="";
 	document.getElementById("usuario6").value="";
 	window.location.reload();
-	var checked = JSON.parse(localStorage.getItem("compuestas")); 
-        document.getElementById("compuestas").checked = checked; // Recuperamos estado del checkbox para tiempos compuestos
+	
 }
 </script>
 	
