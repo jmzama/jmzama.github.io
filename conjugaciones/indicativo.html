@@ -9,8 +9,7 @@ title: Juego de las conjugaciones
 
 <p>6 cuestiones. ¡Suerte!</p>
 	
-<br><input id="compuestas" type="checkbox" onclick="otra()"><label for="compuestas"> Incluir formas compuestas</label>
-
+<br><input id="compuestas" type="checkbox" onclick="save()"><label for="compuestas"> Incluir formas compuestas</label> <button type="button" onclick="otra()">Refrescar
 <p id="pregunta1"></p>
 <input id="usuario1">
 <button id="boton1" type="button" onclick="myFunction(solucion1,1)">Enviar</button>
@@ -304,8 +303,6 @@ function quitaAcentos(cadena) {
 <script>
 function otra()
 {
-	var checkbox = document.getElementById("compuestas");
-        localStorage.setItem("compuestas", checkbox.checked); // Almacenamos estado del checkbox para tiempos compuestos
 	document.getElementById("usuario1").value="";
 	document.getElementById("usuario2").value="";
 	document.getElementById("usuario3").value="";
@@ -316,6 +313,14 @@ function otra()
 	var checked = JSON.parse(localStorage.getItem("compuestas")); 
         document.getElementById("compuestas").checked = checked; // Recuperamos estado del checkbox para tiempos compuestos
 }
+</script>
+	
+<script>
+function save()
+	{
+	var checkbox = document.getElementById("compuestas");
+        localStorage.setItem("compuestas", checkbox.checked); // Almacenamos estado del checkbox para tiempos compuestos
+	}
 </script>
 
 </div><!-- /.blurb -->
